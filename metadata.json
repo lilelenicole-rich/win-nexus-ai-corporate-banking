@@ -1,0 +1,8 @@
+{
+  "name": "Win-Nexus AI Corporate Banking",
+  "description": "A high-end AI-powered corporate banking assistant for relationship managers, featuring real-time risk monitoring, automated due diligence, and conversational intelligence.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
