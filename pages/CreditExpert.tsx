@@ -6,9 +6,9 @@ const CreditExpert: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="pb-32">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 px-4 py-3 flex items-center justify-between">
-        <button onClick={() => navigate(-1)} className="size-10 flex items-center justify-center rounded-full hover:bg-slate-50">
+    <div className="pb-32 animate-in slide-in-from-bottom duration-500">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 px-4 py-3 flex items-center justify-between shadow-sm">
+        <button onClick={() => navigate(-1)} className="size-10 flex items-center justify-center rounded-full hover:bg-slate-50 transition-colors">
           <span className="material-symbols-outlined">arrow_back</span>
         </button>
         <h1 className="text-lg font-black text-slate-900 tracking-tight">授信专家模式</h1>
@@ -17,7 +17,7 @@ const CreditExpert: React.FC = () => {
         </button>
       </header>
 
-      <main className="pt-[80px] p-4 space-y-5 animate-in slide-in-from-bottom duration-500">
+      <main className="p-4 space-y-5">
         <div className="bg-white rounded-[2rem] p-6 border border-slate-100 shadow-sm">
           <div className="flex justify-between items-center mb-5">
             <h2 className="font-black text-slate-900 flex items-center gap-2">

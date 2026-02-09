@@ -7,7 +7,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="pb-24 animate-in fade-in duration-500">
-      <header className="flex items-center justify-between px-5 pt-6 pb-2 sticky top-0 bg-[#FAFAFA]/80 backdrop-blur-md z-30">
+      <header className="flex items-center justify-between px-5 pt-6 pb-2 sticky top-0 bg-white/95 backdrop-blur-md z-40 shadow-sm transition-all">
         <div className="flex items-center gap-3">
           <div className="relative cursor-pointer">
             <img 
@@ -109,7 +109,7 @@ const Dashboard: React.FC = () => {
             time="2小时前" 
             content="资金将在一周内释放。AI 推荐 '稳盈宝 X 号'，匹配度 90%。"
             button="生成营销话术"
-            onClick={() => navigate('/expert')}
+            onClick={() => {}} // Disabled navigation event
           />
         </div>
       </section>
@@ -180,7 +180,7 @@ const AITodoItem: React.FC<{type: string, title: string, time: string, content: 
             </div>
           )}
           {button && (
-            <button disabled className="mt-3 px-4 py-1.5 bg-slate-300 text-slate-500 text-[10px] font-bold rounded-lg shadow-md shadow-slate-200/20 flex items-center gap-1 cursor-not-allowed opacity-60">
+            <button className="mt-3 px-4 py-1.5 bg-[#137fec] text-white text-[10px] font-bold rounded-lg shadow-md shadow-[#137fec]/20 flex items-center gap-1">
               {button} <span className="material-symbols-outlined text-[14px]">auto_awesome</span>
             </button>
           )}
