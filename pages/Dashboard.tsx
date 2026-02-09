@@ -180,7 +180,7 @@ const AITodoItem: React.FC<{type: string, title: string, time: string, content: 
             </div>
           )}
           {button && (
-            <button className="mt-3 px-4 py-1.5 bg-[#137fec] text-white text-[10px] font-bold rounded-lg shadow-md shadow-[#137fec]/20 flex items-center gap-1">
+            <button disabled className="mt-3 px-4 py-1.5 bg-slate-300 text-slate-500 text-[10px] font-bold rounded-lg shadow-md shadow-slate-200/20 flex items-center gap-1 cursor-not-allowed opacity-60">
               {button} <span className="material-symbols-outlined text-[14px]">auto_awesome</span>
             </button>
           )}

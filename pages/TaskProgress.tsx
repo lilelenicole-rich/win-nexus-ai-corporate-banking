@@ -35,6 +35,7 @@ const TaskProgress: React.FC = () => {
           desc="检测到该企业近期存在高频大额跨行转账，AI风控引擎标记为异常，需客户经理人工核实资金用途。"
           progress={65}
           urgent
+          onDetail={() => navigate('/expert')}
         />
         <TaskCard 
           status="自动执行中" 
@@ -44,6 +45,7 @@ const TaskProgress: React.FC = () => {
           time="2小时前"
           desc="正在抓取企业最新工商信息及涉诉记录..."
           progress={40}
+          onDetail={() => navigate('/expert')}
         />
         <TaskCard 
           status="即将完成" 
@@ -53,6 +55,7 @@ const TaskProgress: React.FC = () => {
           time="3小时前"
           desc="所有风控指标审核已完成，正在生成最终尽调报告。"
           progress={95}
+          onDetail={() => navigate('/expert')}
         />
       </main>
 
@@ -73,7 +76,7 @@ const TabButton: React.FC<{icon: string, label: string, active?: boolean}> = ({i
   </button>
 );
 
-const TaskCard: React.FC<{status: string, company: string, task: string, passRate: string, time: string, desc: string, progress: number, urgent?: boolean}> = ({status, company, task, passRate, time, desc, progress, urgent}) => (
+const TaskCard: React.FC<{status: string, company: string, task: string, passRate: string, time: string, desc: string, progress: number, urgent?: boolean, onDetail?: () => void}> = ({status, company, task, passRate, time, desc, progress, urgent, onDetail}) => (
   <div className={`bg-white rounded-[2rem] p-5 shadow-sm border ${urgent ? 'border-red-100 ring-2 ring-red-50' : 'border-slate-100'}`}>
     <div className="flex justify-between items-start mb-4">
       <div>
@@ -100,12 +103,19 @@ const TaskCard: React.FC<{status: string, company: string, task: string, passRat
         <div className="bg-[#137fec] h-full rounded-full transition-all duration-1000" style={{width: `${progress}%`}}></div>
       </div>
     </div>
-    {urgent && (
-      <div className="grid grid-cols-2 gap-3">
-        <button className="py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 text-xs font-bold active:bg-slate-100">查看详情</button>
+    <div className="grid grid-cols-2 gap-3">
+      <button 
+        onClick={onDetail}
+        className="py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 text-xs font-bold active:bg-slate-100"
+      >
+        查看详情
+      </button>
+      {urgent ? (
         <button className="py-2.5 rounded-xl bg-red-500 text-white text-xs font-bold shadow-lg shadow-red-500/20 active:scale-95">立即决策</button>
-      </div>
-    )}
+      ) : (
+        <button className="py-2.5 rounded-xl bg-[#137fec] text-white text-xs font-bold shadow-lg shadow-[#137fec]/20 active:scale-95">查看进度</button>
+      )}
+    </div>
   </div>
 );
 
